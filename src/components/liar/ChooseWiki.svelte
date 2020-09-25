@@ -34,6 +34,22 @@
   }
 </script>
 
+<style>
+  embed {
+    flex: 1;
+  }
+  nav {
+    height: 6vh;
+    display: flex;
+  }
+  button {
+    flex: 1
+  }
+  .confirm {
+    flex: 3;
+  }
+</style>
+
 {#if !articleChosen}
   {#await articles[pointer]}
     <!-- TODO -->
@@ -44,7 +60,7 @@
 
   <nav>
     <button on:click={prev}>{'<'}</button>
-    <button disabled={articleLoading} on:click={confirm}>confirm</button>
+    <button class="confirm" disabled={articleLoading} on:click={confirm}>Select</button>
     <button on:click={next}>{'>'}</button>
   </nav>
 {:else}

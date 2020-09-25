@@ -2,6 +2,9 @@
   export let game;
 </script>
 
+<style>
+  
+</style>
 
 {#if $game.splash.length}
   {#each $game.splash as { player, points }}

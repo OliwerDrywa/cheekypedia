@@ -14,6 +14,13 @@
   $: if (liars.every(p => p.article)) game.selectArticle();
 </script>
 
+<style>
+  * {
+    text-align: center;
+    margin: auto;
+  }
+</style>
+
 {#if $game && $game.selectedArticle}
   <!-- TODO pass minimum of props -->
   <Interviews {game} {room} let:notes>
@@ -22,5 +29,5 @@
     </Guess>
   </Interviews>
 {:else}
-  <p>waiting for players to choose an article</p>
+  <p>Waiting for all players to choose an article.</p>
 {/if}

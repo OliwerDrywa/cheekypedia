@@ -10,12 +10,30 @@
   import Header from "./components/Header.svelte";
 </script>
 
-<Header minimized={$client.inRoom}>
-  {#if $game && $game.started}
-    <Game {client} {room} {game} />
-  {:else}
-    <Room {client} {room}>
-      <RoleSelect {client} {room} />
-    </Room>
-  {/if}
-</Header>
+<style>
+  main {
+    width: 100%;
+    height: 100vh;
+    
+    display: flex;
+    flex-direction: column;
+  }
+</style>
+
+<svelte:head>
+
+  <script src="https://kit.fontawesome.com/6d495571ca.js" crossorigin="anonymous">
+
+  </script>
+</svelte:head>
+<main>
+  <Header minimized={$client.inRoom}>
+    {#if $game && $game.started}
+      <Game {client} {room} {game} />
+    {:else}
+      <Room {client} {room}>
+        <RoleSelect {client} {room} />
+      </Room>
+    {/if}
+  </Header>
+</main>

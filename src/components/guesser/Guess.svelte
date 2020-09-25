@@ -21,11 +21,18 @@
   .selected {
     background: grey;
   }
+  * {
+    text-align: center;
+  }
+  div {
+    margin: 20px;
+  }
 </style>
 
 {#if !$game.splash}
-  {$game.selectedArticle.title}
-  <hr />
+  <p>The article</p>
+  <h2>{$game.selectedArticle.title}</h2>
+  <p>was chosen by</p>
 
   {#each liars as liar}
     <div on:click={() => toggleSelect(liar)}>

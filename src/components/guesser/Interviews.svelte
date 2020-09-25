@@ -48,13 +48,38 @@
   const skip = co();
 </script>
 
+<style>
+  * {
+    text-align: center;
+  }
+  h2 {
+    margin: 0;
+  }
+  button {
+    text-align: center;
+    padding: 5px;
+    margin: 10px auto;
+    border: 1px solid var(--grey);
+    border-radius: 50px;
+
+    width: 65%;
+  }
+  div {
+    margin: 10px;
+  }
+</style>
+
 {#if !timeUp}
-  {$game.selectedArticle.title}
-  <h3>interview</h3>
+  <p>Ask</p>
   <h2>{currentPlayer.name}</h2>
-  <p>{'<countdown>'}</p>
+  <p>about</p>
+  <h2>{$game.selectedArticle.title}</h2>
+
+  <div>(pretend this is a countdown)</div>
+
   <Notepad {notes} {currentPlayer} />
-  <button on:click={skip}>next</button>
+
+  <button on:click={skip}>Next</button>
 {:else}
   <slot {notes} />
 {/if}
